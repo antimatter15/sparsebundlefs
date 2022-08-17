@@ -570,7 +570,7 @@ int main(int argc, char **argv)
         sparsebundle.path, sparsebundle.mountpoint);
 
     char *last_dot = strrchr(sparsebundle.path, '.');
-    if (!last_dot || strcmp(last_dot, ".sparsebundle") != 0)
+    if (!last_dot || (strcmp(last_dot, ".sparsebundle") != 0 && strcmp(last_dot, ".backupbundle") != 0))
         sparsebundle_fatal_error("%s is not a sparse bundle (wrong extension)",
             sparsebundle.path);
 
